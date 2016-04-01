@@ -2,11 +2,15 @@
 // This is where we add everything related to the Express configuration.
 
 // load express framework modules
-var express = require('express'),
+var config = require('./config'),
+    express = require('express'),
 	morgan = require('morgan'),
     compress = require('compression'),
     bodyParser = require('body-parser'),
-    methodOverride = require('method-override');
+    methodOverride = require('method-override'),
+    session = require('express-session'),
+    flash = require('connect-flash'),
+    passport = require('passport');
 
 
 
@@ -26,13 +30,62 @@ module.exports = function() {
     app.use(bodyParser.json());
     app.use(methodOverride());
 
+    // express-session module will use a cookie stored, signed identifier to identify the current user.
+    app.use(session({
+       saveUninitialized: true,
+       resave: true,
+       secret: config.sessionSecret
+    }));
+
+    // express serve static files
+    app.use(express.static('./public'));
+
+    // configure the Express application views folder and template engine
+    app.set('view engine', 'ejs');
+    app.set('views', './app/views');
+    
+
+
+    // store messages in an area of the session object called flash
+    app.use(flash());
+    // Initialize passport modules
+    app.use(passport.initialize());
+    app.use(passport.session());
+
+
     // get app routes
 	require('../app/routes/index.server.routes.js')(app); 
 	require('../app/routes/admin.server.routes.js')(app); 
 
-	// configure the Express application views folder and template engine
-	app.set('views', './app/views');
-    app.set('view engine', 'ejs');
+
+	
+
+    
 
 	return app;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
