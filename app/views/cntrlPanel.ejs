@@ -6,21 +6,11 @@
         </title>
     </head>
     <body>
-        <% for(var i in messages) { %>
-        <div class="flash"><%= messages[i] %></div>
-        <% } %>
-        <form action="/signin" method="post">
-            <div>
-                <label>Username:</label>
-                <input type="text" name="username" />
-            </div>
-            <div>
-                <label>Password:</label>
-                <input type="password" name="password" />
-            </div>
-            <div>
-                <input type="submit" value="Sign In" />
-            </div>
-        </form>
+        
+        Welcome
+       <strong><%= title %></strong>
+
+       <a href="/CntrlPanel/signup">Sign-Up</a>    |    <a href="/CntrlPanel/signin">Sign-in</a>
+
     </body>
 </html>

@@ -15,3 +15,6 @@ var passport = passport();
     app.listen(3000);
     module.exports = app;
     console.log('timeshareAPP started successfully visit port:3000/');
+
+
+    

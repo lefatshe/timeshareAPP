@@ -37,6 +37,9 @@ module.exports = function() {
        secret: config.sessionSecret
     }));
 
+    // store messages in an area of the session object called flash
+    app.use(flash());
+
     // express serve static files
     app.use(express.static('./public'));
 
@@ -45,9 +48,6 @@ module.exports = function() {
     app.set('views', './app/views');
     
 
-
-    // store messages in an area of the session object called flash
-    app.use(flash());
     // Initialize passport modules
     app.use(passport.initialize());
     app.use(passport.session());
