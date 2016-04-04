@@ -3,6 +3,7 @@
 
 exports.render = function(req, res) {
      res.render('index', {
-     title: 'Customer'
+     title: 'Customer',
+     userFullName: req.user ? req.user.fullName : ''
   })
 };

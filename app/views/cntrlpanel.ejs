@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+   <html>
+     <head>
+         <title><%= title %></title>
+       </head>
+       <body>
+         <% if ( userFullName ) { %>
+           admin user authenticated succesfully 
+           <h2> <%=userFullName%> </h2>
+           <a href="/signout">Sign out</a>
+         <% } else { %>
+           log onto application as Administrator  
+           <!-- <a href="/CntrlPanel/signup">Signup</a> -->
+           <a href="/CntrlPanel/signin">Signin</a>
+          <% } %>
+       
+       </body>
+   </html>
