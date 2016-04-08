@@ -1,0 +1,17 @@
+<section ng-controller="AdminController">
+   <div data-ng-show="!authentication.user">
+      <a href="CntrlPanel/signup">Signup</a>
+      <a href="CntrlPanel/signin">Signin</a>
+   </div>
+   <div data-ng-show="authentication.user">
+      <h1>
+         Hello 
+         <span data-ng-bind="authentication.user.fullName"></span>
+      </h1>
+      <a href="/signout">Signout</a>
+      <ul>
+         <li><a href="/#!/timeshares">List Articles</a></li>
+         <li><a href="/#!/timeshares/create">Create Article</a></li>
+      </ul>
+   </div>
+</section>

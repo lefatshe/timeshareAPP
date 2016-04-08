@@ -1,0 +1,13 @@
+<section data-ng-controller="TimesharesController" data-ng-init="findOne()">
+   <h1 data-ng-bind="timeshare.title"></h1>
+   <div data-ng-show="authentication.user._id == timeshare.creator._id"> 
+      <a href="/#!/timeshares/{{timeshare._id}}/edit">edit</a>
+      <a href="#" data-ng-click="delete();">delete</a>
+   </div>
+   <small>
+   <em>Posted on</em>
+   <em data-ng-bind="timeshare.created | date:'mediumDate'"></em> <em>by</em>
+   <em data-ng-bind="timeshare.creator.fullName"></em>
+   </small>
+   <p data-ng-bind="timeshare.content"></p>
+</section>

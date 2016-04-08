@@ -1,4 +1,5 @@
 var users = require('../controllers/users.server.controller'),
+    timeshares = require('../controllers/timeshareUnit.server.controller'),
     passport = require('passport');
 
 module.exports = function(app) {
@@ -18,4 +19,19 @@ module.exports = function(app) {
       }));
 
       app.get('/signout', users.signout);
+
+      // Timeshare Unit Routes
+      app.route('/api/timeshares')
+        .get(timeshares.list)
+        .post(users.requiresLogin, timeshares.create);
+
+      app.route('/api/timeshares/:articleId')
+        .get(timeshares.read)
+        .put(users.requiresLogin, timeshares.hasAuthorization, timeshares.update)
+        .delete(users.requiresLogin, timeshares.hasAuthorization, timeshares.delete);
+
+      app.param('timeshareId', timeshares.timeshareByID);
 };
+
+
+

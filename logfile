@@ -1,0 +1,2 @@
+2016-04-06 10:25:54 SAST [59604]: [1-1]    LOG:  redirecting log output to logging collector process
+2016-04-06 10:25:54 SAST [59604]: [2-1]    HINT:  Future log output will appear in directory "/PostgreSQL/data/log".

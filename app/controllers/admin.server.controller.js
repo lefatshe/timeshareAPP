@@ -4,6 +4,7 @@
 exports.render = function(req, res) {
      res.render('cntrlpanel', {
      title: 'Administrator',
-     userFullName: req.user ? req.user.fullName : ''
+     user: JSON.stringify(req.user)
   })
 };
+

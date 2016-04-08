@@ -29,7 +29,7 @@ exports.renderSignin = function(req, res, next) {
          messages: req.flash('error') || req.flash('info')
       });
       } else {
-       return res.redirect('/CntrlPanel');
+       return res.redirect('/CntrlPanel#!/');
        } 
      };
 
@@ -40,7 +40,7 @@ exports.renderSignup = function(req, res, next) {
          messages: req.flash('error')
 });
 } else {
-       return res.redirect('/CntrlPanel');
+       return res.redirect('/CntrlPanel#!/');
      }
 };
 
@@ -69,6 +69,16 @@ exports.signout = function(req, res) {
      res.redirect('/CntrlPanel');
  };
 
+
+
+exports.requiresLogin = function(req, res, next) {
+    if (!req.isAuthenticated()) {
+          return res.status(401).send({
+          message: 'User is not logged in'
+      }); 
+    }
+    next(); 
+};
 
 
 
