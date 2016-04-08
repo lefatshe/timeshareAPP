@@ -1,0 +1,17 @@
+<section data-ng-controller="TimesharesController" data-ng-init="find()">
+   <h1>Timeshares Available</h1>
+   <ul>
+      <li data-ng-repeat="timeshare in timeshares">
+         <a data-ng-href="#!/timeshares/{{timeshare._id}}" data-ng-
+            bind="timeshare.title"></a>
+         <br>
+         <small data-ng-bind="timeshare.created | date:'medium'"></small>
+         <small>/</small>
+         <small data-ng-bind="timeshare.creator.fullName"></small>
+         <p data-ng-bind="timeshare.content"></p>
+      </li>
+   </ul>
+   <div data-ng-hide="!timeshares || timeshares.length">
+      No timeshares sales yet, why don't you <a href="/#!/timeshares/create">create one</a>?
+   </div>
+</section>

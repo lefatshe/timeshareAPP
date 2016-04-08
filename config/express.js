@@ -4,6 +4,7 @@
 // load express framework modules
 var config = require('./config'),
     express = require('express'),
+<<<<<<< HEAD
 	morgan = require('morgan'),
     compress = require('compression'),
     bodyParser = require('body-parser'),
@@ -13,6 +14,15 @@ var config = require('./config'),
     passport = require('passport');
 
 
+=======
+    morgan = require('morgan'),
+    compress = require('compression'), 
+    bodyParser = require('body-parser'), 
+    methodOverride = require('method-override'), 
+    session = require('express-session'), 
+    flash = require('connect-flash'),
+    passport = require('passport');
+>>>>>>> origin/master
 
 
 module.exports = function() {
@@ -30,6 +40,7 @@ module.exports = function() {
     app.use(bodyParser.json());
     app.use(methodOverride());
 
+<<<<<<< HEAD
     // express-session module will use a cookie stored, signed identifier to identify the current user.
     app.use(session({
        saveUninitialized: true,
@@ -49,6 +60,17 @@ module.exports = function() {
     
 
     // Initialize passport modules
+=======
+    // configure the Express application views folder and template engine
+    app.set('views', './app/views');
+    app.set('view engine', 'ejs');
+
+    app.use(flash());
+    app.use(session({ cookie: { maxAge: 60000 }, 
+                  secret: 'developmentSessionSecret',
+                  resave: false, 
+                  saveUninitialized: false}));
+>>>>>>> origin/master
     app.use(passport.initialize());
     app.use(passport.session());
 
@@ -57,10 +79,14 @@ module.exports = function() {
 	require('../app/routes/index.server.routes.js')(app); 
 	require('../app/routes/admin.server.routes.js')(app); 
 
+<<<<<<< HEAD
 
 	
 
     
+=======
+	 app.use(express.static('./public'));
+>>>>>>> origin/master
 
 	return app;
 };

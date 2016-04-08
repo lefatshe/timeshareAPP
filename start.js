@@ -8,7 +8,12 @@ var mongoose = require('./config/mongoose'),
     express = require('./config/express'),
     passport = require('./config/passport');
 
+<<<<<<< HEAD
 var db = mongoose();
+=======
+
+var db = mongoose();    
+>>>>>>> origin/master
 var app = express();
 var passport = passport();
 

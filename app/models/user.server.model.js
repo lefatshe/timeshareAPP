@@ -3,6 +3,7 @@
 
 // Load the module dependencies
 var mongoose = require('mongoose'),
+<<<<<<< HEAD
     crypto = require('crypto'),
     Schema = mongoose.Schema;
 
@@ -47,6 +48,50 @@ var UserSchema = new Schema({
     providerId: String,
     providerData: {},
     created: {
+=======
+  crypto = require('crypto'),
+  Schema = mongoose.Schema;
+
+// Define a new 'UserSchema'
+var UserSchema = new Schema({
+  firstName: String,
+  lastName: String,
+  email: {
+    type: String,
+    // Validate the email format
+    match: [/.+\@.+\..+/, "Please fill a valid email address"]
+  },
+  username: {
+    type: String,
+    // Set a unique 'username' index
+    unique: true,
+    // Validate 'username' value existance
+    required: 'Username is required',
+    // Trim the 'username' field
+    trim: true
+  },
+  password: {
+    type: String,
+    // Validate the 'password' value length
+    validate: [
+
+      function(password) {
+        return password && password.length > 6;
+      }, 'Password should be longer'
+    ]
+  },
+  salt: {
+    type: String
+  },
+  provider: {
+    type: String,
+    // Validate 'provider' value existance
+    required: 'Provider is required'
+  },
+  providerId: String,
+  providerData: {},
+  created: {
+>>>>>>> origin/master
     type: Date,
     // Create a default 'created' value
     default: Date.now
