@@ -9,9 +9,23 @@
    </head>
 
    <body>
-      <section ng-view></section>
+           
+      <% if (user) { %>
+       <!-- If user is logged in -->
+       hello {{this.user}}
+       <hr/>
+       <a href="/CntrlPanel/signout">Sign out</a>
+          <section ng-include="'/admin_mod/views/cntrl.client.view.html'"></section>
+     <% } else { %>
+       <!-- else user not logged in -->
+       <a href="/CntrlPanel/signin">Signin</a>
+     <% } %>
 
-      <script type="text/javascript">
+
+  
+      <!--  -->
+
+       <script type="text/javascript">
          window.user = <%- user || 'null' %>;
       </script>
 

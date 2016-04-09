@@ -29,9 +29,9 @@ exports.renderSignin = function(req, res, next) {
          messages: req.flash('error') || req.flash('info')
       });
       } else {
-       return res.redirect('/CntrlPanel#!/');
+       return res.redirect('/CntrlPanel');
        } 
-     };
+};
 
 exports.renderSignup = function(req, res, next) {
      if (!req.user) {
@@ -40,7 +40,7 @@ exports.renderSignup = function(req, res, next) {
          messages: req.flash('error')
 });
 } else {
-       return res.redirect('/CntrlPanel#!/');
+       return res.redirect('/');
      }
 };
 

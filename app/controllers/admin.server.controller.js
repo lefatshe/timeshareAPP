@@ -3,8 +3,8 @@
 
 exports.render = function(req, res) {
      res.render('cntrlpanel', {
-     title: 'Administrator',
-     user: JSON.stringify(req.user)
+       title: 'Administrator',
+       user: JSON.stringify(req.user)
   })
 };
 
