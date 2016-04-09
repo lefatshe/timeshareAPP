@@ -1,8 +1,17 @@
 <section ng-controller="AdminController">
    <div data-ng-show="!authentication.user">
-      <a href="CntrlPanel/signup">Signup</a>
-      <a href="CntrlPanel/signin">Signin</a>
+      <!-- <a href="CntrlPanel/signup">Signup</a>
+      <a href="CntrlPanel/signin">Signin</a> -->
+      <div class="center">
+         <img src="images/stop.jpeg" width="65px">
+         <p>You are not authourised to view this page
+            <br/><small>( signin <a href="CntrlPanel/signin">here</a> if you are admin )</small>
+         </p>
+
+      </div>
    </div>
+
+
    <div data-ng-show="authentication.user">
       <h1>
          Hello 
@@ -14,4 +23,7 @@
          <li><a href="/#!/timeshares/create">Create Article</a></li>
       </ul>
    </div>
+
+
+
 </section>

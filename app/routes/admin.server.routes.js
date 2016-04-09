@@ -4,6 +4,8 @@ var users = require('../controllers/users.server.controller'),
 
 module.exports = function(app) {
 	var admin = require('../controllers/admin.server.controller'); 
+  var dashboard = require('../controllers/admin.server.controller'); 
+
 	app.get('/CntrlPanel', admin.render);
 
       app.route('/CntrlPanel/signup')
@@ -13,7 +15,7 @@ module.exports = function(app) {
       app.route('/CntrlPanel/signin')
         .get(users.renderSignin)
         .post(passport.authenticate('local', {
-          successRedirect: '/CntrlPanel',
+          successRedirect: '/CntrlPanel/dashboard',
           failureRedirect: '/CntrlPanel/signin',
           failureFlash: true
       }));

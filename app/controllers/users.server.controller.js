@@ -29,7 +29,7 @@ exports.renderSignin = function(req, res, next) {
          messages: req.flash('error') || req.flash('info')
       });
       } else {
-       return res.redirect('/CntrlPanel#!/');
+       return res.redirect('/CntrlPanel#!/dashboard');
        } 
      };
 
