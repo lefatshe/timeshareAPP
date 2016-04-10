@@ -44,6 +44,7 @@ module.exports = function() {
     // get app routes
 	require('../app/routes/index.server.routes.js')(app); 
 	require('../app/routes/admin.server.routes.js')(app); 
+    require('../app/routes/timeshares.server.routes.js')(app);
 
 	 app.use(express.static('./public'));
 

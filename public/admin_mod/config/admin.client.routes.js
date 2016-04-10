@@ -6,7 +6,7 @@ angular.module('admin')
          			templateUrl: 'admin_mod/views/cntrl.client.view.html'
        		}).
      			otherwise({
-      				redirectTo: '/CntrlPanel'
+      				redirectTo: '/'
 			}); 
      	}
 ]);

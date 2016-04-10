@@ -4,6 +4,6 @@
 
 
 module.exports = {
-     db: 'mongodb://127.0.0.1/appDataBase',
+     db: 'mongodb://127.0.0.1/dbase',
      sessionSecret: 'developmentSessionSecret'
 };

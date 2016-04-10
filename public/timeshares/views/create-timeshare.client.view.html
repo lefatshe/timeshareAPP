@@ -1,18 +1,141 @@
 <section data-ng-controller="TimesharesController">
-   <h1>New Timeshare unit</h1>
+   <h1>Create New Timeshare</h1>
    <form data-ng-submit="create()" novalidate>
+
+      <h3>Timeshare discriptions</h3>
+
       <div>
          <label for="title">Title</label>
          <div>
-            <input type="text" data-ng-model="title" id="title"placeholder="Title" required>
+            <input type="text" data-ng-model="title" id="title" placeholder="Title" required>
          </div>
       </div>
+
       <div>
-         <label for="content">Content</label>
+         <label for="title">Category</label>
          <div>
-            <textarea data-ng-model="content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+            <select data-ng-model="category">
+                 <option value="null">Category 1</option>
+                 <option value="null">Category 2</option>
+                 <option value="null">Category 3</option>
+                 <option value="null">Category 4</option>
+            </select>
          </div>
       </div>
+
+
+      <div>
+         <label for="title">Province</label>
+         <div>
+            <select data-ng-model="province">
+                 <option value="null">Province 1</option>
+                 <option value="null">Province 2</option>
+                 <option value="null">Province 3</option>
+                 <option value="null">Province 4</option>
+            </select>
+         </div>
+      </div>
+
+
+      <div>
+         <label for="content">Discription</label>
+         <div>
+            <textarea data-ng-model="discription" id="content" cols="30" rows="10" placeholder="Provide of the timeshare discription"></textarea>
+         </div>
+      </div>
+
+      <h3>Images</h3>
+
+      <div>
+         <label for="title">Image</label>
+         <div>
+            <input type="text" data-ng-model="images" id="title" placeholder="Image" required>
+         </div>
+      </div>
+
+      <h3>Attractions & Nearby</h3>
+
+      <div>
+         <label for="title">Attractions</label>
+         <div>
+            <input type="text" data-ng-model="attractions" id="title" placeholder="Attractions" required>
+         </div>
+      </div>
+
+
+      <div>
+         <label for="title">Nearby</label>
+         <div>
+            <input type="text" data-ng-model="nearby" id="title" placeholder="Nearby" required>
+         </div>
+      </div>
+
+
+      <h3>Purchases</h3>
+
+      <div>
+         <label for="title">Purchase</label>
+         <div>
+            <select data-ng-model="purchase">
+                 <option value="null">Rental</option>
+                 <option value="null">Buy</option>
+            </select>
+         </div>
+      </div>
+
+      <div>
+         <label for="title">Price</label>
+         <div>
+            <input type="text" data-ng-model="price" id="title" placeholder="Price" required>
+         </div>
+      </div>
+
+      <div>
+         <label for="title">bedrooms</label>
+         <div>
+            <input type="text" data-ng-model="bedrooms" id="title" placeholder="bedrooms" required>
+         </div>
+      </div>
+
+      <div>
+         <label for="title">datemin</label>
+         <div>
+            <input type="text" data-ng-model="datemin" id="title" placeholder="datemin" required>
+         </div>
+      </div>
+
+      <div>
+         <label for="title">datemax</label>
+         <div>
+            <input type="text" data-ng-model="datemax" id="title" placeholder="datemax" required>
+         </div>
+      </div>
+
+      <hr/>
+      <h3>Office Use</h3>
+
+      <div>
+         <label for="title">Make timeshare:</label>
+         <div>
+            <select data-ng-model="availability">
+                 <option value="null">availabile</option>
+                 <option value="null">ordered</option>      
+            </select>
+         </div>
+      </div>
+
+      <div>
+         <label for="title">Are all timeshare details verified:</label>
+         <div>
+            <select data-ng-model="verify">
+                 <option value="null">Verified</option>
+                 <option value="null">pendinding</option>
+            </select>
+         </div>
+      </div>
+
+
+
       <div>
          <input type="submit">
       </div>
@@ -21,3 +144,7 @@
       </div>
    </form>
 </section>
+
+
+
+
